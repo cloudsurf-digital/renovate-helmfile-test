@@ -15,5 +15,5 @@ releases:
       - image:
           pullSecrets:
             - image-pull-secret-src
-          repository: {{ requiredEnv "BLUBB" }}/{{ requiredEnv "BLA" }}
+          repository: '{{ requiredEnv "BLUBB" }}/{{ requiredEnv "BLA" }}'
           tag: v1.20.0 # should match the EKS version, patch version doesnt matter
