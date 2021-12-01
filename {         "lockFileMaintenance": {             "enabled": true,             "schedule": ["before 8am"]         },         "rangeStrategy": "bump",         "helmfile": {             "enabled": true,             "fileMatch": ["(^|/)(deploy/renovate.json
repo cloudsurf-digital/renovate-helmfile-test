@@ -1,0 +1,10 @@
+{
+        "lockFileMaintenance": {
+            "enabled": true
+        },
+        "rangeStrategy": "bump",
+        "helmfile": {
+            "enabled": true,
+            "fileMatch": ["(^|/)(deploy/)?helmfile.yaml$"]
+        }
+}
