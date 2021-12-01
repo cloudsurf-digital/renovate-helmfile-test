@@ -1,0 +1,19 @@
+---
+repositories:
+  - name: autoscaler
+    url: https://kubernetes.github.io/autoscaler
+
+helmDefaults:
+  tillerless: true
+
+releases:
+  - name: cluster-autoscaler
+    namespace: kube-system
+    chart: autoscaler/cluster-autoscaler
+    version: 9.9.2
+    values:
+      - image:
+          pullSecrets:
+            - image-pull-secret-src
+          repository: {{ requiredEnv "BLUBB" }}/{{ requiredEnv "BLA" }}
+          tag: v1.20.0 # should match the EKS version, patch version doesnt matter
